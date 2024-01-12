@@ -1,13 +1,13 @@
 {
   "name": "JATE",
   "version": "1.0.0",
-  "description": "",
+  "description": "Text editor",
   "main": "server.js",
   "scripts": {
     "start:dev": "",
-    "start": "",
+    "start": "npm run build && cd server && node server.js",
     "server": "",
-    "build": "",
+    "build": "cd client && npm run build",
     "install": "",
     "client": ""
   },
