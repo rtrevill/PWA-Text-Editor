@@ -26,6 +26,23 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
+
+      new WebpackPwaManifest({
+        name: 'Text Editor',
+        short_name: 'Editor',
+        description: "Edit text like you've just got your keyboard licence",
+        background_color: '#a2d6eb',
+        theme_color: '#a2d6eb',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      })
     ],
 
     module: {
