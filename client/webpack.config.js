@@ -39,12 +39,18 @@ module.exports = () => {
         lang: 'en',
         screenshots: [
             {
-              src: 'src/images/Jate2.png',
+              src: './assets/screenshots/Jate2.png',
               sizes: '1511x917',
               type: 'image/png',
               form_factor: 'wide',
               label: 'Wide screenshot',
-              purpose: 'any'
+            },
+            {
+              src: './assets/screenshots/Jate1.png',
+              sizes: '1510x1234',
+              type: 'image/png',
+              form_factor: 'narrow',
+              label: 'Narrow screenshot',
             }
         ],
         icons: [
@@ -53,17 +59,6 @@ module.exports = () => {
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
-          // {
-          //   src: path.resolve('src/images/Jate2.png'),
-          //   sizes: [911],
-          //   destination: path.join('assets', 'icons'),
-          // }
-          // {
-          //   src: path.resolve('/src/images/Jate1.png'),
-          //   // type: 'image/png',
-          //   sizes: '1024x1024',
-          //   form_factor: 'wide'
-          // }
         ],
       })
     ],
