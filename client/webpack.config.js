@@ -36,12 +36,34 @@ module.exports = () => {
         theme_color: '#a2d6eb',
         start_url: './',
         publicPath: './',
+        lang: 'en',
+        screenshots: [
+            {
+              src: 'src/images/Jate2.png',
+              sizes: '1511x917',
+              type: 'image/png',
+              form_factor: 'wide',
+              label: 'Wide screenshot',
+              purpose: 'any'
+            }
+        ],
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
+          // {
+          //   src: path.resolve('src/images/Jate2.png'),
+          //   sizes: [911],
+          //   destination: path.join('assets', 'icons'),
+          // }
+          // {
+          //   src: path.resolve('/src/images/Jate1.png'),
+          //   // type: 'image/png',
+          //   sizes: '1024x1024',
+          //   form_factor: 'wide'
+          // }
         ],
       })
     ],
@@ -52,6 +74,10 @@ module.exports = () => {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },  
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,

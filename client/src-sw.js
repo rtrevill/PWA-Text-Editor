@@ -20,7 +20,7 @@ const pageCache = new CacheFirst({
 });
 
 const imageCache = new CacheFirst({
-  cacheName: 'images'
+  cacheName: 'asset'
 });
 
 warmStrategyCache({
