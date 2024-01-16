@@ -19,8 +19,13 @@ const pageCache = new CacheFirst({
   ],
 });
 
-const imageCache = new CacheFirst({
-  cacheName: 'asset'
+const assetCache = new CacheFirst({
+  cacheName: 'asset-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+  ],
 });
 
 warmStrategyCache({
@@ -28,10 +33,22 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
+warmStrategyCache({
+  urls: [ '/assets/screenshots/Jate2.png', 
+          '/assets/screenshots/Jate1.png',
+          '/assets/icons/icon_96x96.97a96e0fc4eb2a8bec3b8d49d90f1d14.png',
+          '/assets/icons/icon_128x128.225c312e650131cfe5a2119fd958867e.png',
+          '/assets/icons/icon_192x192.1efd8d2a5218c9516adb7d6ff7907ac1.png',
+          '/assets/icons/icon_256x256.873242da1488f53efeaca94de308539e.png',
+          '/assets/icons/icon_384x384.15214f65c1219e812d779bfcb384494a.png',
+          '/assets/icons/icon_512x512.3ca11a97eb7d90b61fc3db0f3c5dcdb6.png'],
+  strategy: assetCache,
+});
+
 registerRoute(
   ({ request }) => request.mode === 'navigate', pageCache);
 
 
 // TODO: Implement asset caching
-// registerRoute(imageCache);
-registerRoute(({request}) => request.mode === 'images', imageCache);
+registerRoute(({request}) => request.mode === 'navigate', assetCache);
+
