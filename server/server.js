@@ -2,7 +2,7 @@
 
 const app = express();
 // const PORT = process.env.PORT || 3000;
-const PORT = process.env.PORT || 'https://pacific-lowlands-90183-3e021944b31d.herokuapp.com/';
+const PORT = process.env.PORT || 'https://pacific-lowlands-90183-3e021944b31d.herokuapp.com/' || 3000;
 
 
 app.use(express.static('../client/dist'));
