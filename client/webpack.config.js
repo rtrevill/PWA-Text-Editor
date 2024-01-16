@@ -38,22 +38,6 @@ module.exports = () => {
         publicPath: './',
         id: '/',
         lang: 'en',
-        screenshots: [
-            {
-              src: './assets/screenshots/Jate2.png',
-              sizes: '1511x917',
-              type: 'image/png',
-              form_factor: 'wide',
-              label: 'Wide screenshot',
-            },
-            {
-              src: './assets/screenshots/Jate1.png',
-              sizes: '1510x1234',
-              type: 'image/png',
-              form_factor: 'narrow',
-              label: 'Narrow screenshot',
-            }
-        ],
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
